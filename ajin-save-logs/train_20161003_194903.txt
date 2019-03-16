@@ -1,0 +1,51 @@
+conf:
+       batch_size: 128
+      bbox_thresh: 0.5000
+     bg_thresh_hi: 0.5000
+     bg_thresh_lo: 0.1000
+      fg_fraction: 0.2500
+        fg_thresh: 0.5000
+      image_means: [1x1x3 single]
+    ims_per_batch: 2
+         max_size: 1000
+         rng_seed: 6
+           scales: 600
+      test_binary: 0
+    test_max_size: 1000
+         test_nms: 0.3000
+      test_scales: 600
+      use_flipped: 1
+          use_gpu: 1
+
+opts:
+           cache_name: 'faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage1_fast_rcnn'
+                 conf: [1x1 struct]
+               do_val: 1
+           imdb_train: {[1x1 struct]}
+             imdb_val: [1x1 struct]
+             net_file: '/home/ajin/faster_rcnn/models/pre_trained_models/vgg_16layers/vgg16.caffemodel'
+          roidb_train: {[1x1 struct]}
+            roidb_val: [1x1 struct]
+    snapshot_interval: 10000
+      solver_def_file: '/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_conv3_1/solver_30k40k.prototxt'
+         val_interval: 1000
+            val_iters: 500
+
+Preparing training data...Done.
+Preparing validation data...Done.
+
+------------------------- Iteration 1000 -------------------------
+Training : error 0.194, loss (cls 0.574, reg 0.334)
+Testing  : error 0.175, loss (cls 0.559, reg 0.318)
+
+------------------------- Iteration 2000 -------------------------
+Training : error 0.118, loss (cls 0.293, reg 0.234)
+Testing  : error 0.174, loss (cls 0.634, reg 0.292)
+
+------------------------- Iteration 3000 -------------------------
+Training : error 0.0748, loss (cls 0.182, reg 0.163)
+Testing  : error 0.167, loss (cls 0.724, reg 0.281)
+
+------------------------- Iteration 4000 -------------------------
+Training : error 0.0567, loss (cls 0.137, reg 0.124)
+Testing  : error 0.169, loss (cls 0.761, reg 0.252)

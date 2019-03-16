@@ -1,0 +1,112 @@
+conf:
+       batch_size: 128
+      bbox_thresh: 0.5000
+     bg_thresh_hi: 0.5000
+     bg_thresh_lo: 0.1000
+      fg_fraction: 0.2500
+        fg_thresh: 0.5000
+      image_means: [1x1x3 single]
+    ims_per_batch: 2
+         max_size: 1000
+         rng_seed: 6
+           scales: 600
+      test_binary: 0
+    test_max_size: 1000
+         test_nms: 0.3000
+      test_scales: 600
+      use_flipped: 1
+          use_gpu: 1
+
+opts:
+           cache_name: 'faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage1_fast_rcnn'
+                 conf: [1x1 struct]
+               do_val: 1
+           imdb_train: {[1x1 struct]}
+             imdb_val: [1x1 struct]
+             net_file: '/home/ajin/faster_rcnn/models/pre_trained_models/vgg_16layers/vgg16.caffemodel'
+          roidb_train: {[1x1 struct]}
+            roidb_val: [1x1 struct]
+    snapshot_interval: 10000
+      solver_def_file: '/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_conv3_1/solver_30k40k.prototxt'
+         val_interval: 1000
+            val_iters: 500
+
+Preparing training data...Done.
+Preparing validation data...Done.
+
+------------------------- Iteration 1000 -------------------------
+Training : error 0.192, loss (cls 0.568, reg 0.332)
+Testing  : error 0.183, loss (cls 0.533, reg 0.313)
+
+------------------------- Iteration 2000 -------------------------
+Training : error 0.117, loss (cls 0.291, reg 0.23)
+Testing  : error 0.181, loss (cls 0.709, reg 0.285)
+
+------------------------- Iteration 3000 -------------------------
+Training : error 0.0757, loss (cls 0.186, reg 0.167)
+Testing  : error 0.166, loss (cls 0.765, reg 0.279)
+
+------------------------- Iteration 4000 -------------------------
+Training : error 0.0568, loss (cls 0.139, reg 0.126)
+Testing  : error 0.178, loss (cls 0.889, reg 0.257)
+
+------------------------- Iteration 5000 -------------------------
+Training : error 0.0445, loss (cls 0.111, reg 0.1)
+Testing  : error 0.17, loss (cls 0.919, reg 0.277)
+
+------------------------- Iteration 6000 -------------------------
+Training : error 0.0387, loss (cls 0.098, reg 0.0863)
+Testing  : error 0.173, loss (cls 1.08, reg 0.278)
+
+------------------------- Iteration 7000 -------------------------
+Training : error 0.0336, loss (cls 0.0847, reg 0.0758)
+Testing  : error 0.165, loss (cls 0.931, reg 0.233)
+
+------------------------- Iteration 8000 -------------------------
+Training : error 0.0296, loss (cls 0.0747, reg 0.0671)
+Testing  : error 0.166, loss (cls 1.06, reg 0.274)
+
+------------------------- Iteration 9000 -------------------------
+Training : error 0.0259, loss (cls 0.0662, reg 0.0613)
+Testing  : error 0.166, loss (cls 1.07, reg 0.26)
+
+------------------------- Iteration 10000 -------------------------
+Training : error 0.023, loss (cls 0.0605, reg 0.0573)
+Testing  : error 0.169, loss (cls 1.13, reg 0.275)
+Saved as /home/ajin/faster_rcnn/output/fast_rcnn_cachedir/faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage1_fast_rcnn/voc_2007_trainval/iter_10000
+
+------------------------- Iteration 11000 -------------------------
+Training : error 0.0174, loss (cls 0.0476, reg 0.0467)
+Testing  : error 0.173, loss (cls 1.23, reg 0.266)
+
+------------------------- Iteration 12000 -------------------------
+Training : error 0.0135, loss (cls 0.0385, reg 0.042)
+Testing  : error 0.172, loss (cls 1.34, reg 0.266)
+
+------------------------- Iteration 13000 -------------------------
+Training : error 0.0126, loss (cls 0.0357, reg 0.0397)
+Testing  : error 0.17, loss (cls 1.35, reg 0.268)
+
+------------------------- Iteration 14000 -------------------------
+Training : error 0.0108, loss (cls 0.0317, reg 0.0384)
+Testing  : error 0.17, loss (cls 1.39, reg 0.273)
+
+------------------------- Iteration 15000 -------------------------
+Training : error 0.00982, loss (cls 0.0292, reg 0.0373)
+Testing  : error 0.175, loss (cls 1.51, reg 0.277)
+
+------------------------- Iteration 16000 -------------------------
+Training : error 0.0098, loss (cls 0.0288, reg 0.0368)
+Testing  : error 0.173, loss (cls 1.47, reg 0.274)
+
+------------------------- Iteration 17000 -------------------------
+Training : error 0.00894, loss (cls 0.0276, reg 0.0361)
+Testing  : error 0.171, loss (cls 1.52, reg 0.276)
+
+------------------------- Iteration 18000 -------------------------
+Training : error 0.00844, loss (cls 0.026, reg 0.0359)
+Testing  : error 0.172, loss (cls 1.55, reg 0.276)
+
+------------------------- Iteration 19000 -------------------------
+Training : error 0.00825, loss (cls 0.0248, reg 0.0352)
+Testing  : error 0.17, loss (cls 1.52, reg 0.276)

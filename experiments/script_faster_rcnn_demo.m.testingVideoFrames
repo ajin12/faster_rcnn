@@ -121,13 +121,8 @@ for j = 1:length(im_names)
     end
     figure(j);
     showboxes(im, boxes_cell, classes, 'voc');
-    % gcf - gets the current figure handle. Save jpg encountered error: didn't draw bounding box around tool. Drew box around whole image.
-    % saveas(gcf, strcat('/home/ajin/faster_rcnn/test_output_aj/', im_names{j}, '_result.jpg')); % ADDED
+    % saveas(fig, strcat('/home/ajin/faster_rcnn/test_output_aj/', im_names{j}, '_result.png')); % ADDED
     savefig(strcat('/home/ajin/faster_rcnn/test_output_aj/', im_names{j}, '_result.fig')) % ADDED
-    fig=openfig(strcat('/home/ajin/faster_rcnn/test_output_aj/', im_names{j}, '_result.fig'),'new','invisible');
-    saveas(fig,strcat('/home/ajin/faster_rcnn/test_output_aj/', im_names{j}, '_result.jpg'),'jpg')
-    close(fig);
-
     pause(0.1);
 end
 fprintf('mean time: %.3fs\n', mean(running_time));

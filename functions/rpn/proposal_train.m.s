@@ -15,7 +15,7 @@ function save_model_path = proposal_train(conf, imdb_train, roidb_train, varargi
     ip.addParamValue('imdb_val',            struct(),           @isstruct);
     ip.addParamValue('roidb_val',           struct(),           @isstruct);
     
-    ip.addParamValue('val_iters',           500,                @isscalar);
+    ip.addParamValue('val_iters',           30,                 @isscalar); % CHANGED THIS FROM 500 to 30 or 1/5 of VALIDATION IMAGESET
     ip.addParamValue('val_interval',        1000,               @isscalar); % CHANGED THIS FROM 2000 TO 1000
     ip.addParamValue('snapshot_interval',...
                                             10000,              @isscalar);

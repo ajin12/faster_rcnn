@@ -8,7 +8,7 @@ function gpu_id = auto_select_gpu()
 % --------------------------------------------------------
 
     % deselects all GPU devices
-    gpuDevice([]);
+    gpuDevice([1]);
 
     maxFreeMemory = 0;
     for i = 1:gpuDeviceCount
@@ -23,5 +23,5 @@ function gpu_id = auto_select_gpu()
     fprintf('Use GPU %d\n', gpu_id);
     
     % deselects all GPU devices
-    gpuDevice([]);
+    gpuDevice([1]);
 end

@@ -43,6 +43,8 @@ catch
 
   imdb.name = ['voc_' year '_' image_set];
   imdb.image_dir = fileparts(VOCopts.imgpath);
+  % fprintf(VOCopts.imgsetpath, image_set);
+  % keyboard;
   imdb.image_ids = textread(sprintf(VOCopts.imgsetpath, image_set), '%s');
   imdb.extension = 'jpg';
   imdb.flip = flip;
@@ -67,7 +69,7 @@ catch
   imdb.class_to_id = ...
     containers.Map(imdb.classes, 1:imdb.num_classes);
   imdb.class_ids = 1:imdb.num_classes;
-
+  
   % private VOC details
   imdb.details.VOCopts = VOCopts;
 

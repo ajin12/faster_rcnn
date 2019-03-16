@@ -12,6 +12,7 @@ function active_caffe_mex(gpu_id, caffe_version)
     if ~exist('caffe_version', 'var') || isempty(caffe_version)
         caffe_version = 'caffe';
     end
+    cd .. % ADDED THIS LINE SO caffe_dir WOULD BE CORRECT
     cur_dir = pwd;
     caffe_dir = fullfile(pwd, 'external', 'caffe', 'matlab', caffe_version);
     

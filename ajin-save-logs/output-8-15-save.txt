@@ -1,0 +1,675 @@
+MATLAB is selecting SOFTWARE OPENGL rendering.
+[?1h=
+                                  < M A T L A B (R) >
+                        Copyright 1984-2014 The MathWorks, Inc.
+                        R2014b (8.4.0.150421) 64-bit (glnxa64)
+                                  September 15, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+fast_rcnn startup done
+>> %%-- 08/15/2016 04:11:53 PM --%%exit                            %%-- 08/15/2016 04:11:19 PM --%%exit                            %%-- 08/15/2016 04:10:00 PM --%%exit                            run experiments/script_faster_rcnn_VOC2007_VGG16.m | tee ~/home/ajin/faster_rcnn/output.txt%%-- 08/15/2016 04:06:06 PM --%%                                                           exit                            run experiments/script_faster_rcnn_VOC2007_VGG16.m
+[H[2Jfast_rcnn startup done
+GPU 1: free memory 12652957696
+GPU 2: free memory 12748283904
+GPU 3: free memory 12748283904
+GPU 4: free memory 12748283904
+Use GPU 2
+[Warning: Specified caffe folder
+(/home/ajin/faster_rcnn/external/caffe/matlab/caffe_faster_rcnn) is not exist, change to
+default one (/home/ajin/faster_rcnn/external/caffe/matlab)] 
+[> In active_caffe_mex at 20
+  In script_faster_rcnn_VOC2007_VGG16 at 17
+  In run at 63] 
+Cleared 0 solvers and 1 stand-alone nets
+
+***************
+stage one proposal 
+***************
+aver_boxes_num = 2473, select top 2000
+aver_boxes_num = 2463, select top 2000
+
+***************
+stage one fast rcnn
+***************
+conf:
+       batch_size: 128
+      bbox_thresh: 0.5000
+     bg_thresh_hi: 0.5000
+     bg_thresh_lo: 0.1000
+      fg_fraction: 0.2500
+        fg_thresh: 0.5000
+      image_means: [1x1x3 single]
+    ims_per_batch: 2
+         max_size: 1000
+         rng_seed: 6
+           scales: 600
+      test_binary: 0
+    test_max_size: 1000
+         test_nms: 0.3000
+      test_scales: 600
+      use_flipped: 1
+          use_gpu: 1
+
+opts:
+           cache_name: 'faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage1_...'
+                 conf: [1x1 struct]
+               do_val: 1
+           imdb_train: {[1x1 struct]}
+             imdb_val: [1x1 struct]
+             net_file: '/home/ajin/faster_rcnn/models/pre_trained_models/vgg_16layers...'
+          roidb_train: {[1x1 struct]}
+            roidb_val: [1x1 struct]
+    snapshot_interval: 10000
+      solver_def_file: '/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layer...'
+         val_interval: 10
+            val_iters: 500
+
+Preparing training data...Done.
+Preparing validation data...Done.
+
+------------------------- Iteration 10 -------------------------
+Training : error 0.32, loss (cls 1, reg 0.346)
+Testing  : error 0.219, loss (cls 0.75, reg 0.491)
+
+------------------------- Iteration 20 -------------------------
+Training : error 0.176, loss (cls 0.523, reg 0.344)
+Testing  : error 0.219, loss (cls 0.667, reg 0.519)
+
+------------------------- Iteration 30 -------------------------
+Training : error 0.132, loss (cls 0.309, reg 0.356)
+Testing  : error 0.227, loss (cls 0.698, reg 0.525)
+
+------------------------- Iteration 40 -------------------------
+Training : error 0.0758, loss (cls 0.171, reg 0.286)
+Testing  : error 0.219, loss (cls 0.969, reg 0.519)
+
+------------------------- Iteration 50 -------------------------
+Training : error 0.0609, loss (cls 0.165, reg 0.321)
+Testing  : error 0.219, loss (cls 0.79, reg 0.508)
+
+------------------------- Iteration 60 -------------------------
+Training : error 0.0641, loss (cls 0.163, reg 0.257)
+Testing  : error 0.195, loss (cls 0.464, reg 0.526)
+
+------------------------- Iteration 70 -------------------------
+Training : error 0.075, loss (cls 0.182, reg 0.267)
+Testing  : error 0.195, loss (cls 0.645, reg 0.48)
+
+------------------------- Iteration 80 -------------------------
+Training : error 0.0828, loss (cls 0.191, reg 0.241)
+Testing  : error 0.188, loss (cls 0.481, reg 0.468)
+
+------------------------- Iteration 90 -------------------------
+Training : error 0.0367, loss (cls 0.103, reg 0.213)
+Testing  : error 0.203, loss (cls 0.812, reg 0.437)
+
+------------------------- Iteration 100 -------------------------
+Training : error 0.0375, loss (cls 0.115, reg 0.185)
+Testing  : error 0.211, loss (cls 0.688, reg 0.434)
+
+------------------------- Iteration 110 -------------------------
+Training : error 0.0234, loss (cls 0.0677, reg 0.154)
+Testing  : error 0.18, loss (cls 0.607, reg 0.433)
+
+------------------------- Iteration 120 -------------------------
+Training : error 0.0219, loss (cls 0.0641, reg 0.146)
+Testing  : error 0.219, loss (cls 1.27, reg 0.391)
+
+------------------------- Iteration 130 -------------------------
+Training : error 0.0273, loss (cls 0.0683, reg 0.126)
+Testing  : error 0.203, loss (cls 1.03, reg 0.4)
+
+------------------------- Iteration 140 -------------------------
+Training : error 0.0227, loss (cls 0.0637, reg 0.133)
+Testing  : error 0.219, loss (cls 1.4, reg 0.367)
+
+------------------------- Iteration 150 -------------------------
+Training : error 0.0219, loss (cls 0.0526, reg 0.112)
+Testing  : error 0.172, loss (cls 0.676, reg 0.404)
+
+------------------------- Iteration 160 -------------------------
+Training : error 0.0203, loss (cls 0.05, reg 0.0937)
+Testing  : error 0.219, loss (cls 1.3, reg 0.413)
+
+------------------------- Iteration 170 -------------------------
+Training : error 0.0133, loss (cls 0.0362, reg 0.096)
+Testing  : error 0.18, loss (cls 0.95, reg 0.424)
+
+------------------------- Iteration 180 -------------------------
+Training : error 0.0102, loss (cls 0.0303, reg 0.0875)
+Testing  : error 0.188, loss (cls 1.12, reg 0.371)
+
+------------------------- Iteration 190 -------------------------
+Training : error 0.0125, loss (cls 0.0337, reg 0.0783)
+Testing  : error 0.211, loss (cls 1.5, reg 0.39)
+Saved as /home/ajin/faster_rcnn/output/fast_rcnn_cachedir/faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage1_fast_rcnn/voc_2007_trainval/iter_200
+Saved as /home/ajin/faster_rcnn/output/fast_rcnn_cachedir/faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage1_fast_rcnn/voc_2007_trainval/final
+Cleared 1 solvers and 0 stand-alone nets
+opts:
+      cache_name: 'faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage1_fast_...'
+            conf: [1x1 struct]
+    ignore_cache: 0
+            imdb: [1x1 struct]
+    net_def_file: '/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_con...'
+        net_file: '/home/ajin/faster_rcnn/output/fast_rcnn_cachedir/faster_rcnn_VOC20...'
+           roidb: [1x1 struct]
+          suffix: ''
+
+conf:
+       batch_size: 128
+      bbox_thresh: 0.5000
+     bg_thresh_hi: 0.5000
+     bg_thresh_lo: 0.1000
+      fg_fraction: 0.2500
+        fg_thresh: 0.5000
+      image_means: [1x1x3 single]
+    ims_per_batch: 2
+         max_size: 1000
+         rng_seed: 6
+           scales: 600
+      test_binary: 0
+    test_max_size: 1000
+         test_nms: 0.3000
+      test_scales: 600
+      use_flipped: 1
+          use_gpu: 1
+
+faster_rcnn: test (voc_2007_test) 1/2  time: 1.356s
+faster_rcnn: test (voc_2007_test) 2/2  time: 0.431s
+    0.0043
+    0.0061
+    0.0098
+
+test all images in 1.853787 seconds.
+Cleared 0 solvers and 1 stand-alone nets
+[Warning: MATLAB has disabled some advanced graphics rendering features by switching to
+software OpenGL. For more information, click <a href="matlab:opengl('problems')">here</a>.] 
+!!! grasper : 0.0000 NaN
+!!! maryland : 0.0000 NaN
+!!! electrocautery : 0.6591 0.6250
+
+~~~~~~~~~~~~~~~~~~~~
+Results:
+         0
+         0
+   65.9091
+
+   21.9697
+
+~~~~~~~~~~~~~~~~~~~~
+
+***************
+stage two proposal
+***************
+conf:
+                      batch_size: 256
+                    bg_thresh_hi: 0.3000
+                    bg_thresh_lo: 0
+                       bg_weight: 1
+         drop_boxes_runoff_image: 1
+                     feat_stride: 16
+                     fg_fraction: 0.5000
+                       fg_thresh: 0.7000
+                     image_means: [1x1x3 single]
+                   ims_per_batch: 1
+                        max_size: 1000
+                        rng_seed: 6
+                          scales: 600
+                  target_only_gt: 1
+                     test_binary: 0
+    test_drop_boxes_runoff_image: 0
+                   test_max_size: 1000
+               test_min_box_size: 16
+                        test_nms: 0.3000
+                     test_scales: 600
+                     use_flipped: 1
+                         use_gpu: 1
+                         anchors: [9x4 double]
+                output_width_map: [901x1 containers.Map]
+               output_height_map: [901x1 containers.Map]
+
+opts:
+           cache_name: 'faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage2_rpn'
+                 conf: [1x1 struct]
+               do_val: 1
+           imdb_train: {[1x1 struct]}
+             imdb_val: [1x1 struct]
+             net_file: '/home/ajin/faster_rcnn/output/fast_rcnn_cachedir/faster_rcnn_...'
+          roidb_train: {[1x1 struct]}
+            roidb_val: [1x1 struct]
+    snapshot_interval: 10000
+      solver_def_file: '/home/ajin/faster_rcnn/models/rpn_prototxts/vgg_16layers_fc6/...'
+         val_interval: 10
+            val_iters: 500
+
+Preparing training data...[?1h=Starting parallel pool (parpool) using the 'local' profile ... connected to 12 workers.
+Done.
+Preparing validation data...Done.
+
+------------------------- Iteration 10 -------------------------
+Training : err_fg 0.658, err_bg 0.108, loss (cls 0.357 + reg 0.0103)
+Testing  : err_fg 1, err_bg 0.0042, loss (cls 0.207 + reg 0.0151)
+
+------------------------- Iteration 20 -------------------------
+Training : err_fg 0.588, err_bg 0.00198, loss (cls 0.082 + reg 0.0144)
+Testing  : err_fg 1, err_bg 0.0082, loss (cls 0.19 + reg 0.0149)
+
+------------------------- Iteration 30 -------------------------
+Training : err_fg 0.413, err_bg 0.000397, loss (cls 0.0368 + reg 0.00921)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.181 + reg 0.0142)
+
+------------------------- Iteration 40 -------------------------
+Training : err_fg 0.128, err_bg 0.00161, loss (cls 0.0255 + reg 0.00906)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.172 + reg 0.0142)
+
+------------------------- Iteration 50 -------------------------
+Training : err_fg 0.0967, err_bg 0.00162, loss (cls 0.022 + reg 0.00537)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.167 + reg 0.0139)
+
+------------------------- Iteration 60 -------------------------
+Training : err_fg 0.0483, err_bg 0.00279, loss (cls 0.0214 + reg 0.00417)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.165 + reg 0.0138)
+
+------------------------- Iteration 70 -------------------------
+Training : err_fg 0.071, err_bg 0.00282, loss (cls 0.0219 + reg 0.0028)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.161 + reg 0.0136)
+
+------------------------- Iteration 80 -------------------------
+Training : err_fg 0.071, err_bg 0.000397, loss (cls 0.0167 + reg 0.00199)
+Testing  : err_fg 1, err_bg 0.0042, loss (cls 0.169 + reg 0.0138)
+
+------------------------- Iteration 90 -------------------------
+Training : err_fg 0.08, err_bg 0.00119, loss (cls 0.0147 + reg 0.00293)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.158 + reg 0.0139)
+
+------------------------- Iteration 100 -------------------------
+Training : err_fg 0.0143, err_bg 0, loss (cls 0.0125 + reg 0.00116)
+Testing  : err_fg 1, err_bg 0.0042, loss (cls 0.164 + reg 0.0141)
+
+------------------------- Iteration 110 -------------------------
+Training : err_fg 0.04, err_bg 0.00198, loss (cls 0.0151 + reg 0.0018)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.16 + reg 0.014)
+
+------------------------- Iteration 120 -------------------------
+Training : err_fg 0.04, err_bg 0.00159, loss (cls 0.0127 + reg 0.000864)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.168 + reg 0.014)
+
+------------------------- Iteration 130 -------------------------
+Training : err_fg 0, err_bg 0.0016, loss (cls 0.0126 + reg 0.000911)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.168 + reg 0.014)
+
+------------------------- Iteration 140 -------------------------
+Training : err_fg 0.02, err_bg 0, loss (cls 0.00897 + reg 0.00091)
+Testing  : err_fg 1, err_bg 0.0041, loss (cls 0.167 + reg 0.014)
+
+------------------------- Iteration 150 -------------------------
+Training : err_fg 0.02, err_bg 0, loss (cls 0.00952 + reg 0.00043)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.164 + reg 0.0141)
+
+------------------------- Iteration 160 -------------------------
+Training : err_fg 0, err_bg 0.00119, loss (cls 0.0111 + reg 0.000851)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.165 + reg 0.0141)
+
+------------------------- Iteration 170 -------------------------
+Training : err_fg 0.02, err_bg 0.00119, loss (cls 0.0108 + reg 0.000505)
+Testing  : err_fg 1, err_bg 0.0063, loss (cls 0.173 + reg 0.0142)
+
+------------------------- Iteration 180 -------------------------
+Training : err_fg 0.02, err_bg 0.0016, loss (cls 0.00837 + reg 0.000543)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.169 + reg 0.0142)
+
+------------------------- Iteration 190 -------------------------
+Training : err_fg 0.02, err_bg 0.00159, loss (cls 0.0101 + reg 0.000405)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.178 + reg 0.0142)
+
+------------------------- Iteration 200 -------------------------
+Training : err_fg 0.02, err_bg 0.000397, loss (cls 0.00744 + reg 0.000914)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.174 + reg 0.0142)
+
+------------------------- Iteration 210 -------------------------
+Training : err_fg 0, err_bg 0.00119, loss (cls 0.00866 + reg 0.000349)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.174 + reg 0.0142)
+
+------------------------- Iteration 220 -------------------------
+Training : err_fg 0.02, err_bg 0.00159, loss (cls 0.00891 + reg 0.000524)
+Testing  : err_fg 1, err_bg 0.0042, loss (cls 0.18 + reg 0.0142)
+
+------------------------- Iteration 230 -------------------------
+Training : err_fg 0, err_bg 0.000794, loss (cls 0.00777 + reg 0.000576)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.18 + reg 0.0142)
+
+------------------------- Iteration 240 -------------------------
+Training : err_fg 0.02, err_bg 0.000397, loss (cls 0.00675 + reg 0.000482)
+Testing  : err_fg 1, err_bg 0.0042, loss (cls 0.181 + reg 0.0141)
+
+------------------------- Iteration 250 -------------------------
+Training : err_fg 0, err_bg 0, loss (cls 0.00564 + reg 0.000859)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.18 + reg 0.0141)
+
+------------------------- Iteration 260 -------------------------
+Training : err_fg 0.04, err_bg 0.000397, loss (cls 0.00713 + reg 0.000632)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.179 + reg 0.0141)
+
+------------------------- Iteration 270 -------------------------
+Training : err_fg 0, err_bg 0.000397, loss (cls 0.00586 + reg 0.000999)
+Testing  : err_fg 1, err_bg 0.0063, loss (cls 0.182 + reg 0.0141)
+
+------------------------- Iteration 280 -------------------------
+Training : err_fg 0, err_bg 0.00159, loss (cls 0.00711 + reg 0.00051)
+Testing  : err_fg 1, err_bg 0.0084, loss (cls 0.189 + reg 0.0142)
+
+------------------------- Iteration 290 -------------------------
+Training : err_fg 0, err_bg 0.00357, loss (cls 0.00982 + reg 0.00193)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.178 + reg 0.0141)
+
+------------------------- Iteration 300 -------------------------
+Training : err_fg 0, err_bg 0.000397, loss (cls 0.00465 + reg 0.000599)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.176 + reg 0.014)
+
+------------------------- Iteration 310 -------------------------
+Training : err_fg 0.02, err_bg 0.00119, loss (cls 0.00784 + reg 0.00062)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.178 + reg 0.0141)
+
+------------------------- Iteration 320 -------------------------
+Training : err_fg 0.02, err_bg 0, loss (cls 0.00542 + reg 0.000989)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.173 + reg 0.014)
+
+------------------------- Iteration 330 -------------------------
+Training : err_fg 0, err_bg 0, loss (cls 0.00441 + reg 0.000832)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.177 + reg 0.014)
+
+------------------------- Iteration 340 -------------------------
+Training : err_fg 0, err_bg 0.000807, loss (cls 0.00734 + reg 0.00127)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.18 + reg 0.0141)
+
+------------------------- Iteration 350 -------------------------
+Training : err_fg 0, err_bg 0.000397, loss (cls 0.0053 + reg 0.00185)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.17 + reg 0.0139)
+
+------------------------- Iteration 360 -------------------------
+Training : err_fg 0, err_bg 0.000397, loss (cls 0.00539 + reg 0.00124)
+Testing  : err_fg 1, err_bg 0.0021, loss (cls 0.171 + reg 0.0138)
+
+------------------------- Iteration 370 -------------------------
+Training : err_fg 0, err_bg 0.00278, loss (cls 0.00872 + reg 0.00107)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.171 + reg 0.0139)
+
+------------------------- Iteration 380 -------------------------
+Training : err_fg 0, err_bg 0, loss (cls 0.00439 + reg 0.000535)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.167 + reg 0.0139)
+
+------------------------- Iteration 390 -------------------------
+Training : err_fg 0, err_bg 0.000397, loss (cls 0.00514 + reg 0.000387)
+Testing  : err_fg 1, err_bg 0, loss (cls 0.172 + reg 0.0139)
+Saved as /home/ajin/faster_rcnn/output/rpn_cachedir/faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage2_rpn/voc_2007_trainval/iter_400
+Saved as /home/ajin/faster_rcnn/output/rpn_cachedir/faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage2_rpn/voc_2007_trainval/final
+Cleared 1 solvers and 0 stand-alone nets
+opts:
+      cache_name: 'faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage2_rpn'
+            conf: [1x1 struct]
+            imdb: [1x1 struct]
+    net_def_file: '/home/ajin/faster_rcnn/models/rpn_prototxts/vgg_16layers_fc6/test....'
+        net_file: '/home/ajin/faster_rcnn/output/rpn_cachedir/faster_rcnn_VOC2007_vgg...'
+          suffix: ''
+
+conf:
+                      batch_size: 256
+                    bg_thresh_hi: 0.3000
+                    bg_thresh_lo: 0
+                       bg_weight: 1
+         drop_boxes_runoff_image: 1
+                     feat_stride: 16
+                     fg_fraction: 0.5000
+                       fg_thresh: 0.7000
+                     image_means: [1x1x3 single]
+                   ims_per_batch: 1
+                        max_size: 1000
+                        rng_seed: 6
+                          scales: 600
+                  target_only_gt: 1
+                     test_binary: 0
+    test_drop_boxes_runoff_image: 0
+                   test_max_size: 1000
+               test_min_box_size: 16
+                        test_nms: 0.3000
+                     test_scales: 600
+                     use_flipped: 1
+                         use_gpu: 1
+                         anchors: [9x4 double]
+                output_width_map: [901x1 containers.Map]
+               output_height_map: [901x1 containers.Map]
+
+faster_rcnn: test (voc_2007_trainval) 1/14  time: 0.328s
+faster_rcnn: test (voc_2007_trainval) 2/14  time: 0.199s
+faster_rcnn: test (voc_2007_trainval) 3/14  time: 0.200s
+faster_rcnn: test (voc_2007_trainval) 4/14  time: 0.200s
+faster_rcnn: test (voc_2007_trainval) 5/14  time: 0.195s
+faster_rcnn: test (voc_2007_trainval) 6/14  time: 0.196s
+faster_rcnn: test (voc_2007_trainval) 7/14  time: 0.196s
+faster_rcnn: test (voc_2007_trainval) 8/14  time: 0.194s
+faster_rcnn: test (voc_2007_trainval) 9/14  time: 0.195s
+faster_rcnn: test (voc_2007_trainval) 10/14  time: 0.195s
+faster_rcnn: test (voc_2007_trainval) 11/14  time: 0.195s
+faster_rcnn: test (voc_2007_trainval) 12/14  time: 0.194s
+faster_rcnn: test (voc_2007_trainval) 13/14  time: 0.195s
+faster_rcnn: test (voc_2007_trainval) 14/14  time: 0.195s
+Cleared 0 solvers and 1 stand-alone nets
+aver_boxes_num = 2040, select top 2000
+opts:
+      cache_name: 'faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage2_rpn'
+            conf: [1x1 struct]
+            imdb: [1x1 struct]
+    net_def_file: '/home/ajin/faster_rcnn/models/rpn_prototxts/vgg_16layers_fc6/test....'
+        net_file: '/home/ajin/faster_rcnn/output/rpn_cachedir/faster_rcnn_VOC2007_vgg...'
+          suffix: ''
+
+conf:
+                      batch_size: 256
+                    bg_thresh_hi: 0.3000
+                    bg_thresh_lo: 0
+                       bg_weight: 1
+         drop_boxes_runoff_image: 1
+                     feat_stride: 16
+                     fg_fraction: 0.5000
+                       fg_thresh: 0.7000
+                     image_means: [1x1x3 single]
+                   ims_per_batch: 1
+                        max_size: 1000
+                        rng_seed: 6
+                          scales: 600
+                  target_only_gt: 1
+                     test_binary: 0
+    test_drop_boxes_runoff_image: 0
+                   test_max_size: 1000
+               test_min_box_size: 16
+                        test_nms: 0.3000
+                     test_scales: 600
+                     use_flipped: 1
+                         use_gpu: 1
+                         anchors: [9x4 double]
+                output_width_map: [901x1 containers.Map]
+               output_height_map: [901x1 containers.Map]
+
+faster_rcnn: test (voc_2007_test) 1/2  time: 0.246s
+faster_rcnn: test (voc_2007_test) 2/2  time: 0.194s
+Cleared 0 solvers and 1 stand-alone nets
+aver_boxes_num = 2059, select top 2000
+
+***************
+stage two fast rcnn
+***************
+conf:
+       batch_size: 128
+      bbox_thresh: 0.5000
+     bg_thresh_hi: 0.5000
+     bg_thresh_lo: 0.1000
+      fg_fraction: 0.2500
+        fg_thresh: 0.5000
+      image_means: [1x1x3 single]
+    ims_per_batch: 2
+         max_size: 1000
+         rng_seed: 6
+           scales: 600
+      test_binary: 0
+    test_max_size: 1000
+         test_nms: 0.3000
+      test_scales: 600
+      use_flipped: 1
+          use_gpu: 1
+
+opts:
+           cache_name: 'faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage2_...'
+                 conf: [1x1 struct]
+               do_val: 1
+           imdb_train: {[1x1 struct]}
+             imdb_val: [1x1 struct]
+             net_file: '/home/ajin/faster_rcnn/output/fast_rcnn_cachedir/faster_rcnn_...'
+          roidb_train: {[1x1 struct]}
+            roidb_val: [1x1 struct]
+    snapshot_interval: 10000
+      solver_def_file: '/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layer...'
+         val_interval: 10
+            val_iters: 500
+
+Preparing training data...Done.
+Preparing validation data...Done.
+
+------------------------- Iteration 10 -------------------------
+Training : error 0.093, loss (cls 0.335, reg 0.261)
+Testing  : error 0.203, loss (cls 1.24, reg 0.405)
+
+------------------------- Iteration 20 -------------------------
+Training : error 0.0508, loss (cls 0.184, reg 0.177)
+Testing  : error 0.211, loss (cls 1.17, reg 0.368)
+
+------------------------- Iteration 30 -------------------------
+Training : error 0.0422, loss (cls 0.228, reg 0.138)
+Testing  : error 0.188, loss (cls 0.756, reg 0.341)
+
+------------------------- Iteration 40 -------------------------
+Training : error 0.0297, loss (cls 0.0769, reg 0.106)
+Testing  : error 0.211, loss (cls 0.828, reg 0.325)
+
+------------------------- Iteration 50 -------------------------
+Training : error 0.0227, loss (cls 0.0668, reg 0.0929)
+Testing  : error 0.203, loss (cls 1.08, reg 0.3)
+
+------------------------- Iteration 60 -------------------------
+Training : error 0.0234, loss (cls 0.0573, reg 0.0751)
+Testing  : error 0.203, loss (cls 1.06, reg 0.296)
+
+------------------------- Iteration 70 -------------------------
+Training : error 0.0117, loss (cls 0.0435, reg 0.0809)
+Testing  : error 0.203, loss (cls 1.08, reg 0.29)
+
+------------------------- Iteration 80 -------------------------
+Training : error 0.0172, loss (cls 0.0436, reg 0.0648)
+Testing  : error 0.203, loss (cls 1.07, reg 0.29)
+
+------------------------- Iteration 90 -------------------------
+Training : error 0.0102, loss (cls 0.0304, reg 0.075)
+Testing  : error 0.203, loss (cls 1.16, reg 0.299)
+
+------------------------- Iteration 100 -------------------------
+Training : error 0.0148, loss (cls 0.037, reg 0.0556)
+Testing  : error 0.203, loss (cls 1.26, reg 0.279)
+
+------------------------- Iteration 110 -------------------------
+Training : error 0.0109, loss (cls 0.0391, reg 0.0659)
+Testing  : error 0.203, loss (cls 1.2, reg 0.273)
+
+------------------------- Iteration 120 -------------------------
+Training : error 0.00781, loss (cls 0.0297, reg 0.0471)
+Testing  : error 0.203, loss (cls 1.22, reg 0.276)
+
+------------------------- Iteration 130 -------------------------
+Training : error 0.00781, loss (cls 0.0264, reg 0.051)
+Testing  : error 0.203, loss (cls 1.24, reg 0.281)
+
+------------------------- Iteration 140 -------------------------
+Training : error 0.00937, loss (cls 0.0294, reg 0.0487)
+Testing  : error 0.203, loss (cls 1.44, reg 0.275)
+
+------------------------- Iteration 150 -------------------------
+Training : error 0.00391, loss (cls 0.0205, reg 0.0446)
+Testing  : error 0.203, loss (cls 1.37, reg 0.293)
+
+------------------------- Iteration 160 -------------------------
+Training : error 0.00937, loss (cls 0.0394, reg 0.0463)
+Testing  : error 0.203, loss (cls 1.34, reg 0.287)
+
+------------------------- Iteration 170 -------------------------
+Training : error 0.0141, loss (cls 0.0351, reg 0.0448)
+Testing  : error 0.211, loss (cls 1.39, reg 0.274)
+
+------------------------- Iteration 180 -------------------------
+Training : error 0.00469, loss (cls 0.0219, reg 0.0335)
+Testing  : error 0.211, loss (cls 1.28, reg 0.274)
+
+------------------------- Iteration 190 -------------------------
+Training : error 0.00156, loss (cls 0.0139, reg 0.0476)
+Testing  : error 0.211, loss (cls 1.39, reg 0.291)
+Saved as /home/ajin/faster_rcnn/output/fast_rcnn_cachedir/faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage2_fast_rcnn/voc_2007_trainval/iter_200
+Saved as /home/ajin/faster_rcnn/output/fast_rcnn_cachedir/faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage2_fast_rcnn/voc_2007_trainval/final
+Cleared 1 solvers and 0 stand-alone nets
+
+***************
+final test
+***************
+aver_boxes_num = 437, select top 300
+opts:
+      cache_name: 'faster_rcnn_VOC2007_vgg_16layers_top-1_nms0_7_top2000_stage2_fast_...'
+            conf: [1x1 struct]
+    ignore_cache: 0
+            imdb: [1x1 struct]
+    net_def_file: '/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_fc6...'
+        net_file: '/home/ajin/faster_rcnn/output/fast_rcnn_cachedir/faster_rcnn_VOC20...'
+           roidb: [1x1 struct]
+          suffix: ''
+
+conf:
+       batch_size: 128
+      bbox_thresh: 0.5000
+     bg_thresh_hi: 0.5000
+     bg_thresh_lo: 0.1000
+      fg_fraction: 0.2500
+        fg_thresh: 0.5000
+      image_means: [1x1x3 single]
+    ims_per_batch: 2
+         max_size: 1000
+         rng_seed: 6
+           scales: 600
+      test_binary: 0
+    test_max_size: 1000
+         test_nms: 0.3000
+      test_scales: 600
+      use_flipped: 1
+          use_gpu: 1
+
+faster_rcnn: test (voc_2007_test) 1/2  time: 0.246s
+faster_rcnn: test (voc_2007_test) 2/2  time: 0.240s
+    0.0026
+    0.0086
+    0.0090
+
+test all images in 0.511954 seconds.
+Cleared 0 solvers and 1 stand-alone nets
+!!! grasper : 0.0000 NaN
+!!! maryland : 0.0000 NaN
+!!! electrocautery : 0.1818 0.1667
+
+~~~~~~~~~~~~~~~~~~~~
+Results:
+         0
+         0
+   18.1818
+
+    6.0606
+
+~~~~~~~~~~~~~~~~~~~~
+Cleared 0 solvers and 2 stand-alone nets
+[?1h=[?1h=[?1h=[?1h=please modify detection_test.prototxt file for sharing conv layers with proposal model (delete layers until relu5_3)
+>> 

@@ -1,0 +1,30 @@
+/home/ajin/faster_rcnn/fetch_data/output/faster_rcnn_final/faster_rcnn_VOC0712_vgg_16layers/detection_test.prototxt:106:		num_output: 8 # CHANGED THIS FROM 21 TO 8
+/home/ajin/faster_rcnn/fetch_data/output/faster_rcnn_final/faster_rcnn_VOC0712_vgg_16layers/detection_test.prototxt:130:		num_output: 32 # CHANGED THIS FROM 84 TO 32
+/home/ajin/faster_rcnn/output/faster_rcnn_final/faster_rcnn_VOC2007_vgg_16layers-10-04-2016-Model/detection_test.prototxt:479:		num_output: 8 # CHANGED FROM 21 TO 8
+/home/ajin/faster_rcnn/output/faster_rcnn_final/faster_rcnn_VOC2007_vgg_16layers-10-04-2016-Model/detection_test.prototxt:503:		num_output: 32 # CHANGED FROM 84 TO 32
+/home/ajin/faster_rcnn/output/faster_rcnn_final/faster_rcnn_VOC0712_vgg_16layers/detection_test.prototxt:106:		num_output: 21 % CHANGED THIS FROM 21 TO 4
+/home/ajin/faster_rcnn/output/faster_rcnn_final/faster_rcnn_VOC0712_vgg_16layers/detection_test.prototxt:130:		num_output: 84 % CHANGED THIS FROM 84 TO 16
+/home/ajin/faster_rcnn/output/faster_rcnn_final/faster_rcnn_VOC0712_vgg_16layers/detection_test.prototxt.amy:106:		num_output: 4 % CHANGED THIS FROM 21 TO 4
+/home/ajin/faster_rcnn/output/faster_rcnn_final/faster_rcnn_VOC0712_vgg_16layers/detection_test.prototxt.amy:130:		num_output: 16 % CHANGED THIS FROM 84 TO 16
+/home/ajin/faster_rcnn/output/faster_rcnn_final/faster_rcnn_VOC2007_vgg_16layers/detection_test.prototxt:479:		num_output: 8 # CHANGED FROM 21 TO 8
+/home/ajin/faster_rcnn/output/faster_rcnn_final/faster_rcnn_VOC2007_vgg_16layers/detection_test.prototxt:503:		num_output: 32 # CHANGED FROM 84 TO 32
+/home/ajin/faster_rcnn/functions/fast_rcnn/fast_rcnn_train.m:19:    ip.addParamValue('val_interval',    1000,           @isscalar); % CHANGED THIS FROM 2000 TO 1000
+/home/ajin/faster_rcnn/functions/fast_rcnn/fast_rcnn_train.m:84:        shuffled_inds_val = shuffled_inds_val(randperm(length(shuffled_inds_val), min(length(shuffled_inds_val), opts.val_iters))); % CHANGED THIS
+/home/ajin/faster_rcnn/functions/rpn/proposal_train.m:19:    ip.addParamValue('val_interval',        1000,               @isscalar); % CHANGED THIS FROM 2000 TO 1000
+/home/ajin/faster_rcnn/functions/rpn/proposal_train.m:89:        shuffled_inds_val = shuffled_inds_val(randperm(length(shuffled_inds_val), min(length(shuffled_inds_val), opts.val_iters))); % CHANGED THIS
+/home/ajin/faster_rcnn/experiments/script_faster_rcnn_demo.m:22:%model_dir                    = fullfile(pwd, 'output', 'faster_rcnn_final', 'faster_rcnn_VOC2007_vgg_16layers'); %% CHANGED
+/home/ajin/faster_rcnn/experiments/script_faster_rcnn_demo.m:70:im_names = {'01_frame0044.jpg', '01_frame0055.jpg', '01_frame0377.jpg', '01_frame0403.jpg', '01_frame0412.jpg'}; % CHANGED
+/home/ajin/faster_rcnn/experiments/script_faster_rcnn_demo.m:71:%im_names = {'01_frame0044.jpg'}; %CHANGED
+/home/ajin/faster_rcnn/experiments/script_faster_rcnn_demo.m:72:%im_names = {'08_frame0015.jpg'}; % CHANGED
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_fc6/train_val.prototxt:23:input_dim: 32 # CHANGED FROM 84 TO 32 # 4 * (K+1) (=21) classes
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_fc6/train_val.prototxt:29:input_dim: 32 # CHANGED FROM 84 TO 32 # 4 * (K+1) (=21) classes
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_fc6/train_val.prototxt:498:		num_output: 8 # CHANGED FROM 21 TO 8
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_fc6/train_val.prototxt:522:		num_output: 32 # CHANGED FROM 84 TO 32
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_fc6/test.prototxt:479:		num_output: 8 # CHANGED FROM 21 TO 8
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_fc6/test.prototxt:503:		num_output: 32 # CHANGED FROM 84 TO 32
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_conv3_1/train_val.prototxt:23:input_dim: 32 # CHANGED FROM 84 TO 32 # 4 * (K+1) (=21) classes
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_conv3_1/train_val.prototxt:29:input_dim: 32 # CHANGED FROM 84 TO 32 # 4 * (K+1) (=21) classes
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_conv3_1/train_val.prototxt:498:		num_output: 8 # CHANGED FROM 21 TO 8
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_conv3_1/train_val.prototxt:522:		num_output: 32 # CHANGED FROM 84 TO 32
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_conv3_1/test.prototxt:479:		num_output: 8 # CHANGED FROM 21 TO 8
+/home/ajin/faster_rcnn/models/fast_rcnn_prototxts/vgg_16layers_conv3_1/test.prototxt:503:		num_output: 32 # CHANGED FROM 84 TO 32

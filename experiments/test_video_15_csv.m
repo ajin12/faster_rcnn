@@ -17,9 +17,9 @@ opts.use_gpu                = true;
 opts.test_scales            = 600;
 
 %% -------------------- INIT_MODEL --------------------
-%model_dir                   = fullfile(pwd, 'output', 'faster_rcnn_final', 'faster_rcnn_VOC0712_vgg_16layers'); %% VGG-16
+%model_dir                   = fullfile(pwd, 'output', 'faster_rcnn_final', 'faster_rcnn_VOC2007_vgg_16layers'); %% VGG-16
 %model_dir                   = fullfile(pwd, 'output', 'faster_rcnn_final', 'faster_rcnn_VOC0712_ZF'); %% ZF
-model_dir                    = fullfile(pwd, 'output', 'faster_rcnn_final', 'faster_rcnn_VOC2007_vgg_16layers'); %% CHANGED
+model_dir                   = fullfile(pwd, 'output', 'faster_rcnn_final', 'faster_rcnn_VOC2007_vgg_16layers'); %% VGG-16
 proposal_detection_model    = load_proposal_detection_model(model_dir);
 
 proposal_detection_model.conf_proposal.test_scales = opts.test_scales;
@@ -70,15 +70,20 @@ end
 % im_names = {'01_frame0044.jpg', '01_frame0055.jpg', '01_frame0377.jpg', '01_frame0403.jpg', '01_frame0412.jpg'}; % CHANGED
 %im_names = {'01_frame0044.jpg'}; % CHANGED
 %im_names = {'08_frame0015.jpg'}; % CHANGED
+num_annot = 1; %added
+%frames = dir(strcat(pwd, '/test_input_aj/HighlyRatedTrimResize/*.jpg')); % ADDED, frames is structure array with fields name, date, bytes, isdir
 
-frames = dir(strcat(pwd, '/test_input_aj/chole1-5FramesPerSecond/*.jpg')); % ADDED, frames is structure array with fields name, date, bytes, isdir
+frames = dir(strcat(pwd, '/test_input_aj/m2cai16-tool/tool_video_15/*.jpg')); % ADDED, frames is structure array with fields name, date, bytes
+
 im_names = {frames.name}; % ADDED, cell array of strings
 % im_names = {'Image1000.jpg'}; % CHANGED
 
 running_time = [];
 for j = 1:length(im_names)
     
-    im = imread(fullfile(strcat(pwd, '/test_input_aj/chole1-5FramesPerSecond'), im_names{j})); % CHANGED pwd part
+%   im = imread(fullfile(strcat(pwd, '/datasets/imageset'), im_names{j})); % CHANGED pwd part
+%    im = imread(fullfile(strcat(pwd, '/test_input_aj/HighlyRatedTrimResize'), im_names{j})); % CHANGED pwd part
+    im = imread(fullfile(strcat(pwd, '/test_input_aj/m2cai16-tool/tool_video_15'), im_names{j})); % CHANGED pwd part
     
     if opts.use_gpu
         im = gpuArray(im);
@@ -112,24 +117,44 @@ for j = 1:length(im_names)
     classes = proposal_detection_model.classes;
     boxes_cell = cell(length(classes), 1);
     thres = 0.6;
+    %thres = 0.5; % 1/25/2017 Use threshold 0.5 for testing
+    %thres = 0.00001; % CHANGED for m2cai16-tool test (was 0.0 for 8Classes test)
+    %thres = 0.8; % 2/8/2017  Use threshold 0.8 for testing
+    %thres = 0.9; 
     for i = 1:length(boxes_cell)
         boxes_cell{i} = [boxes(:, (1+(i-1)*4):(i*4)), scores(:, i)];
         boxes_cell{i} = boxes_cell{i}(nms(boxes_cell{i}, 0.3), :);
         
         I = boxes_cell{i}(:, 5) >= thres;
         boxes_cell{i} = boxes_cell{i}(I, :);
+        filename = im_names{j}; %added
+        coord = boxes_cell{i}; %added
+        type = classes{i}; %added
+        annot3(num_annot) = struct('seq', j, ... 
+                                       'frame', filename, ... 
+                                       'coord', coord, ...
+                                       'class', type); %added
+        num_annot = num_annot+1; %added
+        
     end
-    figure(j);
-    showboxes(im, boxes_cell, classes, 'voc');
+    %figure(j); 
+    %showboxes(im, boxes_cell, classes, 'voc');
     % gcf - gets the current figure handle. Save jpg encountered error: didn't draw bounding box around tool. Drew box around whole image.
     % saveas(gcf, strcat('/home/ajin/faster_rcnn/test_output_aj/', im_names{j}, '_result.jpg')); % ADDED
-    savefig(strcat('/home/ajin/faster_rcnn/test_output_aj/', im_names{j}, '_result.fig')) % ADDED
-    fig=openfig(strcat('/home/ajin/faster_rcnn/test_output_aj/', im_names{j}, '_result.fig'),'new','invisible');
-    saveas(fig,strcat('/home/ajin/faster_rcnn/test_output_aj/', im_names{j}, '_result.jpg'),'jpg')
-    close(fig);
+%    savefig(strcat('/home/ajin/faster_rcnn/test_output_aj/HighlyRatedTrimResize/', im_names{j}(1:end-4), '_result.fig')) % ADDED
+%    fig=openfig(strcat('/home/ajin/faster_rcnn/test_output_aj/HighlyRatedTrimResize/', im_names{j}(1:end-4), '_result.fig'),'new','invisible');
+ %   saveas(fig,strcat('/home/ajin/faster_rcnn/test_output_aj/HighlyRatedTrimResize/', im_names{j}(1:end-4), '_result.jpg'),'jpg')
 
+
+    %savefig(strcat('/home/ajin/faster_rcnn/test_output_aj/m2cai16-tool/tool_video_15/', im_names{j}(1:end-4), '_result.fig')) % ADDED
+    %fig=openfig(strcat('/home/ajin/faster_rcnn/test_output_aj/m2cai16-tool/tool_video_15/', im_names{j}(1:end-4), '_result.fig'),'new','invisible');
+    %saveas(fig,strcat('/home/ajin/faster_rcnn/test_output_aj/m2cai16-tool/tool_video_15/', im_names{j}(1:end-4), '_result.jpg'),'jpg')
+
+    %close(fig);
     pause(0.1);
 end
+    annot_filename = strcat('tool_video_15_image', '_test.csv'); %added
+    writetable(struct2table(annot3), strcat('/home/ajin/faster_rcnn/test_output_aj/m2cai16-tool/tool_video_15/', annot_filename)); %added
 fprintf('mean time: %.3fs\n', mean(running_time));
 
 caffe.reset_all(); 

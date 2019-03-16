@@ -1,0 +1,141 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                   R2014b (8.4.0.150421) 64-bit (glnxa64)
+                             September 15, 2014
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+fast_rcnn startup done
+>>  function script_faster_rcnn_VOC2007_VGG16()
+ |
+{Error: Function definitions are not permitted in this context.
+} 
+>> >> >> >> >> >> >> >> >> >> >> >> fast_rcnn startup done
+>> >> >> GPU 1: free memory 12365340672
+GPU 2: free memory 12748152832
+GPU 3: free memory 12748152832
+GPU 4: free memory 12748152832
+Use GPU 2
+>> [Warning: Specified caffe folder
+(/home/ajin/external/caffe/matlab/caffe_faster_rcnn) is not exist, change to
+default one (/home/ajin/external/caffe/matlab)] 
+[> In active_caffe_mex at 20] 
+{Error using cd
+Cannot CD to /home/ajin/external/caffe/matlab (Name is nonexistent or not a
+directory).
+
+Error in active_caffe_mex (line 26)
+    cd(caffe_dir);
+} 
+>> >> >> >> >> >> >> >> >> >> >> {Error using cd
+Cannot CD to ./datasets/VOCdevkit (Name is nonexistent or not a directory).
+
+Error in get_voc_opts (line 4)
+cd(path);
+
+Error in imdb_from_voc (line 41)
+  VOCopts = get_voc_opts(root_dir);
+
+Error in Dataset.voc2007_trainval (line 11)
+        dataset.imdb_train    = {  imdb_from_voc(devkit, 'trainval', '2007',
+        use_flip) };
+} 
+>> {Error using cd
+Cannot CD to ./datasets/VOCdevkit (Name is nonexistent or not a directory).
+
+Error in get_voc_opts (line 4)
+cd(path);
+
+Error in imdb_from_voc (line 41)
+  VOCopts = get_voc_opts(root_dir);
+
+Error in Dataset.voc2007_test (line 14)
+        dataset.imdb_test     = imdb_from_voc(devkit, 'test', '2007', use_flip)
+        ;
+} 
+>> >> >> >> {Error using load
+Unable to read file
+'/home/ajin/models/pre_trained_models/vgg_16layers/mean_image'. No such file or
+directory.
+
+Error in proposal_config (line 69)
+        s = load(conf.image_means);
+} 
+>> {Error using load
+Unable to read file
+'/home/ajin/models/pre_trained_models/vgg_16layers/mean_image'. No such file or
+directory.
+
+Error in fast_rcnn_config (line 55)
+        s = load(conf.image_means);
+} 
+>> >> >> >> {Undefined function or variable 'conf_proposal'.
+} 
+>> >> >> 
+***************
+stage one proposal 
+***************
+>> >> {Undefined function or variable 'conf_proposal'.
+} 
+>> >> {Attempt to reference field of non-structure array.
+} 
+>> {Undefined function or variable 'conf_proposal'.
+} 
+>> >> >> 
+***************
+stage one fast rcnn
+***************
+>> >> {Undefined function or variable 'conf_fast_rcnn'.
+} 
+>> >> {Undefined function or variable 'conf_fast_rcnn'.
+} 
+>> >> >> >> 
+***************
+stage two proposal
+***************
+>> >> {Reference to non-existent field 'output_model_file'.
+} 
+>> {Undefined function or variable 'conf_proposal'.
+} 
+>> >> {Attempt to reference field of non-structure array.
+} 
+>> {Undefined function or variable 'conf_proposal'.
+} 
+>> >> >> 
+***************
+stage two fast rcnn
+***************
+>> >> {Reference to non-existent field 'output_model_file'.
+} 
+>> {Undefined function or variable 'conf_fast_rcnn'.
+} 
+>> >> >> 
+***************
+final test
+***************
+>> >> >> {Undefined function or variable 'conf_proposal'.
+} 
+>> {Undefined function or variable 'conf_fast_rcnn'.
+} 
+>> >> >> {Undefined function or variable 'conf_proposal'.
+} 
+>>  end
+ |
+{Error: Illegal use of reserved keyword "end".
+} 
+>> >>  function [anchors, output_width_map, output_height_map] = proposal_prepare_anchors(conf, cache_name, test_net_def_file)
+ |
+{Error: Function definitions are not permitted in this context.
+} 
+>> {Undefined function or variable 'conf'.
+} 
+>> {Undefined function or variable 'cache_name'.
+} 
+>>  end
+ |
+{Error: Illegal use of reserved keyword "end".
+} 
+>> 
